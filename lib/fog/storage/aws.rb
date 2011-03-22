@@ -174,6 +174,7 @@ module Fog
           else
             raise ArgumentError, "Unknown region: #{options[:region].inspect}"
           end
+          @scheme = options[:scheme] || 'https'
           @region = options[:region]
           @data = self.class.data[@region][@aws_access_key_id]
         end
